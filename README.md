@@ -7,14 +7,14 @@ A Docker image for CI with Python.
 ## Docker image
 https://github.com/thombashi/python-ci-image/pkgs/container/python-ci
 
-### available tags fo python-ci
+### Available tags for python-ci
 - `3.10`
 - `3.9`
 - `3.8`
 - `3.7`
 
 
-## preinstalled packages
+## Preinstalled packages
 Following packages are preinstalled in images:
 
 - `Python`
