@@ -1,8 +1,8 @@
 # python-ci-image
 A Docker image for CI with Python.
 
-[![Build and publish Docker images](https://github.com/thombashi/python-ci-image/actions/workflows/build_docker_image.yml/badge.svg)](https://github.com/thombashi/python-ci-image/actions/workflows/build_docker_image.yml)
-
+[![Build and publish Docker images to ghcr.io](https://github.com/thombashi/python-ci-image/actions/workflows/build_docker_image_ghcrio.yml/badge.svg)](https://github.com/thombashi/python-ci-image/actions/workflows/build_docker_image_ghcrio.yml)
+[![Build and publish Docker images to docker.io](https://github.com/thombashi/python-ci-image/actions/workflows/build_docker_image_dockerio.yml/badge.svg)](https://github.com/thombashi/python-ci-image/actions/workflows/build_docker_image_dockerio.yml)
 
 ## Docker image
 https://github.com/thombashi/python-ci-image/pkgs/container/python-ci
