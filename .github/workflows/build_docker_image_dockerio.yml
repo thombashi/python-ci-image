@@ -37,4 +37,6 @@ jobs:
         run: docker build -t ${IMAGE_NAME}:${PYTHON_VER} --pull . --build-arg PYTHON_VERSION=${PYTHON_VER}
 
       - name: Push a Docker image for Python ${{ matrix.python-version }}
+        env:
+          PYTHON_VER: ${{ matrix.python-version }}
         run: docker push ${IMAGE_NAME}:${PYTHON_VER}
