@@ -1,0 +1,40 @@
+name: Build and publish Docker images to docker.io
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * *"  # every day
+  workflow_dispatch:
+
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.7", "3.8", "3.9", "3.10"]
+    env:
+      IMAGE_NAME: thombashi/python-ci
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Log in to the Container registry
+        env:
+          DOCKERIO_USER: ${{ secrets.DOCKERIO_USER }}
+          DOCKERIO_PASSWORD: ${{ secrets.DOCKERIO_PASSWORD }}
+        run: echo "$DOCKERIO_PASSWORD" | docker login -u "$DOCKERIO_USER" --password-stdin
+
+      - name: Build a Docker image for Python ${{ matrix.python-version }}
+        env:
+          PYTHON_VER: ${{ matrix.python-version }}
+        run: docker build -t ${IMAGE_NAME}:${PYTHON_VER} --pull . --build-arg PYTHON_VERSION=${PYTHON_VER}
+
+      - name: Push a Docker image for Python ${{ matrix.python-version }}
+        run: docker push ${IMAGE_NAME}:${PYTHON_VER}
