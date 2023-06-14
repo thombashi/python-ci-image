@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 0 * * SUN"  # every Sunday
+    - cron: "0 0 1 * *"  # every month
   workflow_dispatch:
 
 jobs:
