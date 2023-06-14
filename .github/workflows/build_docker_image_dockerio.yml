@@ -23,7 +23,7 @@ jobs:
       IMAGE_NAME: thombashi/python-ci
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Log in to the Container registry
         env:
