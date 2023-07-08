@@ -21,4 +21,3 @@ The following packages are preinstalled in `python-ci` images:
 - `3.10`
 - `3.9`
 - `3.8`
-- `3.7`
