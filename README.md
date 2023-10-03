@@ -17,6 +17,7 @@ The following packages are preinstalled in `python-ci` images:
 - `make`
 
 ## Available tags for python-ci image
+- `3.12`
 - `3.11`
 - `3.10`
 - `3.9`
