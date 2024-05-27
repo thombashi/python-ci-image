@@ -2,6 +2,7 @@ ARG PYTHON_VERSION
 FROM python:${PYTHON_VERSION}-slim
 
 LABEL org.opencontainers.image.source https://github.com/thombashi/python-ci-image
+LABEL org.opencontainers.image.documentation https://github.com/thombashi/python-ci-image/blob/main/README.md
 LABEL maintainer="Tsuyoshi Hombashi <tsuyoshi.hombashi@gmail.com>"
 
 ENV DEBIAN_FRONTEND noninteractive
